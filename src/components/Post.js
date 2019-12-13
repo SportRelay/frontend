@@ -5,7 +5,7 @@ import { Card, CardDeck, Row} from 'react-bootstrap'
 export default class Post extends Component {
     render() {
         return (
-            <CardDeck>
+            <CardDeck style={{justifyContent: 'center'}}>
               <Row>
             <Card className= 'card w-100'>
               <Card.Body>
