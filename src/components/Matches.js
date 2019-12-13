@@ -16,7 +16,7 @@ export default class SideBar extends Component {
                 
                 
               return(  <tr>
-                    <td>{val.utcDate}</td>
+                    <td>{val.utcDate.replace("T", " at ").slice(0, -4)}</td>
                     <td>{val.competition.name}</td>
                     <td>{val.homeTeam.name}</td>
                     <td>{val.awayTeam.name}</td>

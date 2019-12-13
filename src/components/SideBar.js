@@ -11,12 +11,14 @@ import Matches from './Matches'
 export default class SideBar extends Component {
 
     render() {
+        console.log(this.props.response);
+        
         return (
             <div>
                 
-                    <Matches />
+                    <Matches response={this.props.response}/>
                     <br/>
-                    <EndMatches />
+                    <EndMatches response={this.props.response}/>
                     <br/>
                     <EnglandTable />
                 

@@ -1,12 +1,15 @@
-import React, { Component } from 'react'
-import { Route, BrowserRouter, Switch } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import './App.css';
-import Home from './components/Home'
+import Home from './components/Home';
 import SideBar from './components/SideBar';
-import EndMatches from './components/EndMatches'
-import axios from 'axios'
-import EnglandTable from './components/EnglandTable'
+import Matches from './components/Matches'
+import EndMatches from './components/EndMatches';
+import axios from 'axios';
+import EnglandTable from './components/EnglandTable';
 import CustomNavbar from './components/CustomNavbar';
+import Profile from './components/Profile';
+import ChangePassword from './components/ChangePassword';
 
 
 class App extends Component {
@@ -26,25 +29,30 @@ class App extends Component {
     })
         .then(function (response) {
            obj.setState({ response })
-           
         })
 }
 
 
 
   render(){
+    console.log(this.state.response);
+    
   return (
     <BrowserRouter>
     <div className="App">
     <CustomNavbar />
     
       <Switch>
-      <Route exact path="/" component ={Home} />
-      {/* <Route exact path="/" render={(props) => <Home {...props} response={this.state.response} />} /> */}
+      {/* <Route exact path="/" component ={Home} /> */}
+      <Route exact path="/" render={(props) => <Home {...props} response={this.state.response} />} />
 
       <Route path="/SideBar" render={(props) => <SideBar {...props} response={this.state.response} />} />
       <Route exact path="/EndMatches" render={(props) => <EndMatches {...props} response={this.state.response} />} />
-      <Route path="/EnglandTable" component= {EnglandTable}/>
+      <Route exact path="/Matches" render={(props) => <Matches {...props} response={this.state.response} />} />
+      {/* <Route path="/Matches" component={Matches} /> */}
+      <Route path="/EnglandTable" component={EnglandTable} />
+      <Route path="/Profile" component={Profile} />
+      <Route path="/ChangePassword" component={ChangePassword} />
       </Switch>   
     </div>
     </BrowserRouter>

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import vImage from '../assets/banner.jpg'
-import { Card, CardDeck, Nav} from 'react-bootstrap'
+import { Card, CardDeck, Row} from 'react-bootstrap'
 export default class Post extends Component {
     render() {
         return (
             <CardDeck>
+              <Row>
             <Card className= 'card w-100'>
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
@@ -20,6 +21,26 @@ export default class Post extends Component {
                 <small className="text-muted">Last updated 3 mins ago</small>
               </Card.Footer>
             </Card>
+            </Row>
+            <br />
+            <Row>
+            <Card md ={12}>  
+              <Card.Body>
+                <Card.Title>Card title</Card.Title>
+                <Card.Text>
+                  This is a wider card with supporting text below as a natural lead-in to
+                  additional content. This content is a little bit longer.
+                </Card.Text>
+                <Card.Link href="#">Like</Card.Link>
+                <Card.Link href="#">Relpy</Card.Link>
+              </Card.Body>
+              <Card.Footer>
+                <small className="text-muted">Last updated 3 mins ago</small>
+              </Card.Footer>
+            </Card>
+            </Row>
+            <br />
+            <Row>
             <Card md ={12}>
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
@@ -34,34 +55,8 @@ export default class Post extends Component {
                 <small className="text-muted">Last updated 3 mins ago</small>
               </Card.Footer>
             </Card>
-            <Card md ={12}>
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural lead-in to
-                  additional content. This content is a little bit longer.
-                </Card.Text>
-                <Card.Link href="#">Like</Card.Link>
-                <Card.Link href="#">Relpy</Card.Link>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-            <Card md ={12}>
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural lead-in to
-                  additional content. This content is a little bit longer.
-                </Card.Text>
-                <Card.Link href="#">Like</Card.Link>
-                <Card.Link href="#">Relpy</Card.Link>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
+            </Row>
+            <br />
             </CardDeck>
 
             

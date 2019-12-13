@@ -16,7 +16,7 @@ export default class Home extends Component {
                     </Col>
                     <Col className="ml-3" md={4} sm={12} style={{background: "#EAEAEA"}}>
                     <h1>Side</h1>
-                    <SideBar />
+                    <SideBar response={this.props.response}/>
                     </Col>
                 </Row>
             
