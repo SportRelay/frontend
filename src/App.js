@@ -10,6 +10,9 @@ import EnglandTable from './components/EnglandTable';
 import CustomNavbar from './components/CustomNavbar';
 import Profile from './components/Profile';
 import ChangePassword from './components/ChangePassword';
+import SignUp from './components/SignUp'
+import SignIn from './components/SignIn'
+import SignOut from './components/SignOut'
 
 
 class App extends Component {
@@ -49,10 +52,14 @@ class App extends Component {
       <Route path="/SideBar" render={(props) => <SideBar {...props} response={this.state.response} />} />
       <Route exact path="/EndMatches" render={(props) => <EndMatches {...props} response={this.state.response} />} />
       <Route exact path="/Matches" render={(props) => <Matches {...props} response={this.state.response} />} />
-      {/* <Route path="/Matches" component={Matches} /> */}
       <Route path="/EnglandTable" component={EnglandTable} />
-      <Route path="/Profile" component={Profile} />
-      <Route path="/ChangePassword" component={ChangePassword} />
+      {localStorage.getItem("usertoken")? <Route path="/Profile" component={Profile} /> : null}
+      {localStorage.getItem("usertoken")? <Route path="/ChangePassword" component={ChangePassword} />: null}
+      {localStorage.getItem("usertoken")? <Route path="/SignOut" component={SignOut} />: null}
+      {localStorage.getItem("usertoken")? null :<Route path="/SignUp" render={(props) => <SignUp {...props}/>} />}
+      {localStorage.getItem("usertoken")? null :<Route path="/SignIn" render={(props) => <SignIn {...props}/>} />}{localStorage.getItem("usertoken")? null :<Route path="/SignIn" render={(props) => <SignIn {...props}/>} />}
+
+
       </Switch>   
     </div>
     </BrowserRouter>

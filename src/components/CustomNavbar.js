@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Navbar, Nav, NavDropdown, Image, Form, FormControl, Button } from 'react-bootstrap'
+
 export default class CustomNavbar extends Component {
     render() {
         return (
@@ -25,7 +26,7 @@ export default class CustomNavbar extends Component {
                                     <Image src={require("../assets/germany.svg")} style={{ width: '25px', height: '25px' }} />{' '} Bundesliga</NavDropdown.Item>
                             </NavDropdown>
 
-                            {(localStorage.usertoken) ? null :
+                            {(localStorage.usertoken) ?<Nav.Link href="/SignOut">SignOut</Nav.Link>:
                                 <Nav.Link href="/SignUp">SignUp</Nav.Link>
                             }
 
