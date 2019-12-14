@@ -1,6 +1,7 @@
 import React from 'react'
 import {Form, Col, Button, Container} from 'react-bootstrap'
 import axios from 'axios'
+import CustomNavbar from './CustomNavbar';
 
 export default class SignIn extends React.Component {
 	onChangeHandler = (e) => {
@@ -17,8 +18,8 @@ export default class SignIn extends React.Component {
         }).then(res => {
             if(res.status === 200){
            		localStorage.setItem('usertoken', res.data.token);
-           		this.props.history.push('/');
-
+           		this.props.login()
+           		this.props.history.push('/')
            	}
            	else{
            		alert("Somthing happned!!!");

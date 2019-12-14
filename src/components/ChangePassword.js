@@ -13,26 +13,33 @@ export default class ChangePassword extends Component {
             [e.target.name]: e.target.value
         })
     }
-    onSubmitHandelr = (e) => {
+    onSubmitHandelr = async(e) => {
         e.preventDefault()
-        let token = localStorage.usertoken
-        const decoded = jwt_decode(token)
-
-
-        axios.put(`/user/changepass/${decoded.user._id}`, {
+        let config = {
+            headers: {
+                "Content-Type" : "application/json",
+                "Authorization": `Bearer ${localStorage.usertoken}`
+            }
+        }
+        let data = {
             password: this.state.password,
             newPassword: this.state.newPassword
-        })
+        }
+        
+        await axios.patch(`http://localhost:5000/api/auth/reset`, data, config)
             .then(res => {
-                if ("password not match" == res.data.msg) {
+                console.log(res.data)
+                if ("Password has been reset Successfully" !== res.data.message) {
                     this.setState({ wrong: true })
                 }
                 else {
                     this.setState({ show: true })
                 }
-            })
+            }).catch( err => console.log(err))
     }
+    
     render() {
+        console.log(this.state.wrong)
         return (
 
             <div className="formcontainer">

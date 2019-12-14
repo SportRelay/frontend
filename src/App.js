@@ -16,9 +16,13 @@ import SignOut from './components/SignOut'
 
 
 class App extends Component {
-
+  constructor(props){
+    super(props);
+    this.userLoggedIn = this.userLoggedIn.bind(this);
+  }
   state = {
     response: null,
+    loggedIn: localStorage.usertoken? true: false
   }
 
   componentDidMount() {
@@ -34,16 +38,20 @@ class App extends Component {
            obj.setState({ response })
         })
 }
+  userLoggedIn(){
+    this.setState({loggedIn: !this.state.loggedIn})
+    console.log(this.state.loggedIn)
+  }
 
 
 
   render(){
-    console.log(this.state.response);
+    console.log(this.state.response, this.state.loggedIn);
     
   return (
     <BrowserRouter>
     <div className="App">
-    <CustomNavbar />
+    <CustomNavbar loggedIn={this.state.loggedIn}/> 
     
       <Switch>
       {/* <Route exact path="/" component ={Home} /> */}
@@ -53,11 +61,12 @@ class App extends Component {
       <Route exact path="/EndMatches" render={(props) => <EndMatches {...props} response={this.state.response} />} />
       <Route exact path="/Matches" render={(props) => <Matches {...props} response={this.state.response} />} />
       <Route path="/EnglandTable" component={EnglandTable} />
-      {localStorage.getItem("usertoken")? <Route path="/Profile" component={Profile} /> : null}
-      {localStorage.getItem("usertoken")? <Route path="/ChangePassword" component={ChangePassword} />: null}
-      {localStorage.getItem("usertoken")? <Route path="/SignOut" component={SignOut} />: null}
-      {localStorage.getItem("usertoken")? null :<Route path="/SignUp" render={(props) => <SignUp {...props}/>} />}
-      {localStorage.getItem("usertoken")? null :<Route path="/SignIn" render={(props) => <SignIn {...props}/>} />}{localStorage.getItem("usertoken")? null :<Route path="/SignIn" render={(props) => <SignIn {...props}/>} />}
+      {this.state.loggedIn? <Route path="/Profile" component={Profile} /> : null}
+      {this.state.loggedIn? <Route path="/ChangePassword" component={ChangePassword} />: null}
+      {this.state.loggedIn? <Route path="/SignOut" render={(props) => <SignOut {...props} signOut={this.userLoggedIn} />} />: null}
+      {this.state.loggedIn? null :<Route path="/SignUp" render={(props) => <SignUp {...props} />} />}
+      {this.state.loggedIn? null :<Route path="/SignIn" render={(props) => <SignIn {...props} login={this.userLoggedIn}/>} />}
+
 
 
       </Switch>   
