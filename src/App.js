@@ -10,6 +10,7 @@ import EnglandTable from './components/EnglandTable';
 import CustomNavbar from './components/CustomNavbar';
 import Profile from './components/Profile';
 import ChangePassword from './components/ChangePassword';
+import Favorite from './components/Favorite';
 
 
 class App extends Component {
@@ -53,6 +54,7 @@ class App extends Component {
       <Route path="/EnglandTable" component={EnglandTable} />
       <Route path="/Profile" component={Profile} />
       <Route path="/ChangePassword" component={ChangePassword} />
+      <Route path="/Favorite" component={Favorite} />
       </Switch>   
     </div>
     </BrowserRouter>

@@ -23,6 +23,7 @@ export default class EnglandTable extends Component {
     }
     
     render() {
+        console.log(this.state.englandTable);
         
         return (
             <div>

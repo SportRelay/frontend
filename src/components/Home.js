@@ -10,12 +10,15 @@ export default class Home extends Component {
         return(
             
                 <Row>
+                    
                     <Col className="ml-5" md={7} sm={12} style={{background: "#EAEAEA"}}>
-                    <h1>Main</h1>
+                    <br />
+                    {/* <h1>Main</h1> */}
                     <Post />
                     </Col>
                     <Col className="ml-3" md={4} sm={12} style={{background: "#EAEAEA"}}>
-                    <h1>Side</h1>
+                    <br />
+                    {/* <h1>Side</h1> */}
                     <SideBar response={this.props.response}/>
                     </Col>
                 </Row>

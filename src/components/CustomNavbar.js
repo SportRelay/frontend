@@ -10,8 +10,10 @@ export default class CustomNavbar extends Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav >
                             <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="/Matches">Today's Matches</Nav.Link>
-                            <Nav.Link href="/EndMatches">Results</Nav.Link>
+                            <NavDropdown title="Matches" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="Matches">Today's Matches</NavDropdown.Item>
+                                <NavDropdown.Item href="EndMatches">Result</NavDropdown.Item>
+                            </NavDropdown>
                             <NavDropdown title="Top 5 Leagues" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/EnglandTable">
                                     <Image src={require("../assets/england.svg")} style={{ width: '25px', height: '25px' }} />{' '} Premier League</NavDropdown.Item>
@@ -35,10 +37,10 @@ export default class CustomNavbar extends Component {
 
 </Nav>                    
 </Navbar.Collapse>
-                    <Form inline>
+                    {/* <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                         <Button variant="outline-info">Search</Button>
-                    </Form>
+                    </Form> */}
                     
                     
                 </Navbar>

@@ -11,7 +11,8 @@ export default class EndMatches extends Component {
             let status = this.props.response.data.matches[i].status
             
             if (status == "FINISHED") {
-              return(  <tr>
+              return(  
+                <tr>
                     <td>{val.competition.name}</td>
                     <td>{val.homeTeam.name}</td>
                     <td className='font-weight-bold'>{val.score.fullTime.homeTeam}  -  {val.score.fullTime.awayTeam}</td> 
