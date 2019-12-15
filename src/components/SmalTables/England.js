@@ -3,7 +3,7 @@ import { Card, Container, Row, Col, Table } from 'react-bootstrap'
 import axios from 'axios'
 
 
-export default class EnglandTable extends Component {
+export default class England extends Component {
 
     state = {
         response:null
@@ -47,14 +47,16 @@ export default class EnglandTable extends Component {
                                         <th>WON</th>
                                         <th>DRAW</th>
                                         <th>LOST</th>
-                                        <th>GOALS FOR</th>
+                                        {/* <th>GOALS FOR</th>
                                         <th>GOALS AGAINST</th>
-                                        <th>GOALS DIFFERENCE</th>
+                                        <th>GOALS DIFFERENCE</th> */}
                                         <th>POINTS</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {this.state.response == null ? [] : this.state.response.data.standings[0].table.map((val, i) => (
+                                    {this.state.response == null ? [] : this.state.response.data.standings[0].table.map((val, i) => {
+                                        if (i < 5){
+                                            return(
                                         <tr>
                                             <td>{val.position}</td>
                                             <td><img src={val.team.crestUrl} style={{width: '50px', height: '50px'}} /><br/> {val.team.name}</td>
@@ -62,12 +64,14 @@ export default class EnglandTable extends Component {
                                             <td>{val.won}</td>
                                             <td>{val.draw}</td>
                                             <td>{val.lost}</td>
-                                            <td>{val.goalsFor}</td>
+                                            {/* <td>{val.goalsFor}</td>
                                             <td>{val.goalsAgainst}</td>
-                                            <td>{val.goalDifference}</td>
+                                            <td>{val.goalDifference}</td> */}
                                             <td>{val.points}</td>
                                         </tr>
-                                    )
+                                            )
+                                        }
+                                    }
                                     )}
                                 </tbody>
                             </Table>

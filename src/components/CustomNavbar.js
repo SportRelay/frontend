@@ -17,7 +17,7 @@ export default class CustomNavbar extends Component {
                             <NavDropdown title="Top 5 Leagues" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/EnglandTable">
                                     <Image src={require("../assets/england.svg")} style={{ width: '25px', height: '25px' }} />{' '} Premier League</NavDropdown.Item>
-                                <NavDropdown.Item href="/ItalyTable">
+                                <NavDropdown.Item href="/ItalianTable">
                                     <Image src={require("../assets/italy.svg")} style={{ width: '25px', height: '25px' }} />{' '} Serie A League</NavDropdown.Item>
                                 <NavDropdown.Item href="/SpainTable">
                                     <Image src={require("../assets/spain.svg")} style={{ width: '25px', height: '25px' }} />{' '} La Liga</NavDropdown.Item>

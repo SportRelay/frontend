@@ -6,12 +6,20 @@ import SideBar from './components/SideBar';
 import Matches from './components/Matches'
 import EndMatches from './components/EndMatches';
 import axios from 'axios';
-import EnglandTable from './components/EnglandTable';
 import CustomNavbar from './components/CustomNavbar';
 import Profile from './components/Profile';
 import ChangePassword from './components/ChangePassword';
 import Favorite from './components/Favorite';
-
+import EnglandTable from './components/EnglandTable';
+import ItalianTable from './components/ItalianTable';
+import SpainTable from './components/SpainTable';
+import FranceTable from './components/FranceTable';
+import GermanyTable from './components/GermanyTable';
+import England from './components/SmalTables/England';
+import Italy from './components/SmalTables/Italy';
+import Spain from './components/SmalTables/Spain';
+import France from './components/SmalTables/France';
+import Germany from './components/SmalTables/Germany';
 
 class App extends Component {
 
@@ -50,11 +58,20 @@ class App extends Component {
       <Route path="/SideBar" render={(props) => <SideBar {...props} response={this.state.response} />} />
       <Route exact path="/EndMatches" render={(props) => <EndMatches {...props} response={this.state.response} />} />
       <Route exact path="/Matches" render={(props) => <Matches {...props} response={this.state.response} />} />
-      {/* <Route path="/Matches" component={Matches} /> */}
-      <Route path="/EnglandTable" component={EnglandTable} />
+      {/* <Route path="/Matches" component={Matches} /> */} 
       <Route path="/Profile" component={Profile} />
       <Route path="/ChangePassword" component={ChangePassword} />
       <Route path="/Favorite" component={Favorite} />
+      <Route path="/EnglandTable" component={EnglandTable} />
+      <Route path="/ItalianTable" component={ItalianTable} />
+      <Route path="/SpainTable" component={SpainTable} />
+      <Route path="/FranceTable" component={FranceTable} />
+      <Route path="/GermanyTable" component={GermanyTable} />
+      <Route path="/England" component={England} />
+      <Route path="/Italy" component={Italy} />
+      <Route path="/Spain" component={Spain} />
+      <Route path="/France" component={France} />
+      <Route path="/Germany" component={Germany} />
       </Switch>   
     </div>
     </BrowserRouter>

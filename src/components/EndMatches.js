@@ -32,7 +32,7 @@ export default class EndMatches extends Component {
                     </Card>
                     <Row >
                         <Col  >
-                            <Table striped bordered hover variant="dark" size='sm' style= {{opacity: .99}}>
+                            <Table style={{maxWidth: '100px'}} striped bordered hover variant="dark" size='sm' style= {{opacity: .99}}>
 
                                 <thead>
                                     <tr>

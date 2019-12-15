@@ -3,7 +3,7 @@ import { Card, Container, Row, Col, Table } from 'react-bootstrap'
 import axios from 'axios'
 
 
-export default class EnglandTable extends Component {
+export default class SpainTable extends Component {
 
     state = {
         response:null
@@ -13,7 +13,7 @@ export default class EnglandTable extends Component {
         let obj = this
         axios({
             headers: { 'X-Auth-Token': '24cff506e20140d3aea18a56e74c7ec7' },
-            url: 'http://api.football-data.org/v2/competitions/2021/standings?api-key=24cff506e20140d3aea18a56e74c7ec7',
+            url: 'http://api.football-data.org/v2/competitions/2015/standings?api-key=24cff506e20140d3aea18a56e74c7ec7',
             dataType: 'json',
             type: 'GET',
         })
@@ -32,7 +32,7 @@ export default class EnglandTable extends Component {
 
                     <Card style={{backgroundColor: '#17a2b8', color: '#fff'}}>
                         <Card.Title  >
-                            <h2 style={{paddingTop: '20px', fontSize: '18px'}}>Premier League</h2>
+                            <h2 style={{paddingTop: '20px', fontSize: '18px'}}>LIGUE 1</h2>
                             </Card.Title>
                     </Card>
                     <Row >
