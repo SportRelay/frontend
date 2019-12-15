@@ -6,7 +6,8 @@ import SweetAlert from 'sweetalert2-react';
 
 export default class ChangePassword extends Component {
     state = {
-        wrong: false
+        wrong: false,
+        msg: null
     }
     onChangeHandler = (e) => {
         this.setState({
@@ -35,9 +36,9 @@ export default class ChangePassword extends Component {
                 else {
                     this.setState({ show: true })
                 }
-            }).catch( err => console.log(err))
+            }).catch( err => this.setState({wrong: true , msg: err.response.data.message}))
     }
-    
+
     render() {
         console.log(this.state.wrong)
         return (
@@ -55,7 +56,7 @@ export default class ChangePassword extends Component {
 
                 {this.state.wrong && ['danger'].map((variant, idx) => (
                     <Alert key={idx} variant={variant}>
-                        the old password not correct
+                        {this.state.msg}
                 </Alert>
                 ))}
                 <div className="top">Change Password</div>

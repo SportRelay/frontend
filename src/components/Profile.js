@@ -14,15 +14,16 @@ class Profile extends Component {
       errors: {}
     }
   }
-//   componentDidMount() {
-//     const token = localStorage.usertoken
-//     if(token){
-//       const decoded = jwt_decode(token)
-//     this.setState(decoded.user)
-//     }else{
-//       this.props.history.push('/Login')
-//     }
-//   }
+  componentDidMount() {
+    const token = localStorage.usertoken
+    if(token){
+      const decoded = jwt_decode(token)
+      console.log(decoded)
+    this.setState(decoded)
+    }else{
+      this.props.history.push('/Login')
+    }
+  }
   render() {
     return (
       <div className="container">
@@ -33,7 +34,7 @@ class Profile extends Component {
           <table className="table col-md-6 mx-auto">
             <tbody>
               <tr>
-                <td>Fist Name</td>
+                <td>First Name</td>
                 <td>{this.state.firstname}</td>
               </tr>
               <tr>
@@ -43,10 +44,6 @@ class Profile extends Component {
               <tr>
                 <td>Email</td>
                 <td>{this.state.email}</td>
-              </tr>
-              <tr>
-                <td>Phone Number</td>
-                <td>{this.state.phonenumber}</td>
               </tr>
               <tr>
                 {/* <td>Change Password</td> */}
