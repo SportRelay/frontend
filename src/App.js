@@ -20,6 +20,7 @@ import Italy from './components/SmalTables/Italy';
 import Spain from './components/SmalTables/Spain';
 import France from './components/SmalTables/France';
 import Germany from './components/SmalTables/Germany';
+import CreatePost from './components/CreatePost';
 
 class App extends Component {
 
@@ -72,6 +73,7 @@ class App extends Component {
       <Route path="/Spain" component={Spain} />
       <Route path="/France" component={France} />
       <Route path="/Germany" component={Germany} />
+      <Route path="/CreatePost" component={CreatePost} />
       </Switch>   
     </div>
     </BrowserRouter>

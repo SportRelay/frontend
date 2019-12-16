@@ -35,7 +35,7 @@ export default class ChangePassword extends Component {
     render() {
         return (
 
-            <div className="formcontainer">
+            <div className="formcontainer pass-form-style" >
                 <SweetAlert
                     show={this.state.show}
                     title="Change Password"
@@ -51,7 +51,7 @@ export default class ChangePassword extends Component {
                         the old password not correct
                 </Alert>
                 ))}
-                <div className="top">Change Password</div>
+                <div className="top"><h1>Change Password</h1></div>
                 <div className="form">
                     <Form onSubmit={this.onSubmitHandelr} noValidate>
                         <table className="table col-md-6 mx-auto">
@@ -64,8 +64,8 @@ export default class ChangePassword extends Component {
                                     onChange={this.onChangeHandler} />
                             </Form.Group>
                         </table>
-                        <Button variant='secondary' type="submit" >
-                            Change Password </Button>
+                        <button className="submit-pass" type="submit" >
+                            Change Password </button>
                     </Form>
 
                 </div>
