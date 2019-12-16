@@ -28,11 +28,16 @@ export default class CustomNavbar extends Component {
                                     <Image src={require("../assets/germany.svg")} style={{ width: '25px', height: '25px' }} />{' '} Bundesliga</NavDropdown.Item>
                             </NavDropdown>
 
-                            { this.props.loggedIn ?<Nav.Link href="/SignOut">SignOut</Nav.Link>:
+                            { this.props.loggedIn ?  <Nav.Link href="/Profile">Profile</Nav.Link>:
                                 <Nav.Link href="/SignUp">SignUp</Nav.Link>
                             }
-
-                            { this.props.loggedIn ? <Nav.Link href="/Profile">Profile</Nav.Link>:
+                            { this.props.loggedIn ?  <Nav.Link href="/CreatePost">Create Post</Nav.Link>:
+                                null
+                            }
+                            { this.props.loggedIn ?  <Nav.Link href="/Favorite">Favorite</Nav.Link>:
+                                null
+                            }
+                            { this.props.loggedIn ? <Nav.Link href="/SignOut">SignOut</Nav.Link>:
                                 <Nav.Link href="/SignIn">SignIn</Nav.Link>
                             }
 

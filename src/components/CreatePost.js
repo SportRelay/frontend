@@ -7,22 +7,24 @@ export default class CreatePost extends Component{
 
     this.state = {
       title: '',
-      body: '',
-      user: '',
+      body: ''
     }
 
     this.handleChangeField = this.handleChangeField.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(){
-    const { title, body, user } = this.state;
-
-    return axios.post('http://localhost:8000/api/posts', {
-      title,
-      body,
-      user,
-    });
+  async handleSubmit(e){
+    e.preventDefault()
+    const { title, body } = this.state;
+    let config = {
+            headers: {
+                "Content-Type" : "application/json",
+                "Authorization": `Bearer ${localStorage.usertoken}`
+            }
+    }
+    let data = {title, body}
+    await axios.post('http://localhost:5000/api/post', data, config).then(res => this.props.history.push('/')).catch( err => console.log(err))
   }
 
   handleChangeField(key, event) {
@@ -32,7 +34,7 @@ export default class CreatePost extends Component{
   }
 
   render() {
-    const { title, body, user } = this.state;
+    const { title, body } = this.state;
 
     return (
       <div className="form-style col-12 col-lg-6 offset-lg-3" >
@@ -49,12 +51,6 @@ export default class CreatePost extends Component{
           placeholder="Article Body"
           value={body}>
         </textarea>
-        <input
-          onChange={(ev) => this.handleChangeField('user', ev)}
-          value={user}
-          className="form-control my-3"
-          placeholder="User"
-        />
         <button className="submit-post" onClick={this.handleSubmit} >Submit</button>
       </div>
     )

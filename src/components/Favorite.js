@@ -25,25 +25,50 @@ export default class Favorite extends Component {
         url: '',
         
     }
-
+    config = {
+            headers: {
+                "Content-Type" : "application/json",
+                "Authorization": `Bearer ${localStorage.usertoken}`
+            }
+        }
+    async componentDidMount(){
+        try{
+        let favorite = Number((await axios.get('http://localhost:5000/api/user/favorites', this.config)).data.favorites[0])
+        await axios({
+            headers: { 'X-Auth-Token': '24cff506e20140d3aea18a56e74c7ec7' },
+            url: `https://api.football-data.org/v2/teams/${this.state.teamNum[favorite]}/matches`
+           
+        })
+            .then( (response)=> {
+                this.setState({ response, url: this.state.listUrl[favorite], teamName1: this.state.teamName[favorite] })
+            })
+        }catch(err){
+            console.log(err.response)
+        }
+    }
     
-    onSubmitHandler = ({target :{name , value}}) => {
-       
+    onSubmitHandler = async ({target :{name , value}}) => {
+       try{
         let obj = {...this.state}
         let ele = obj.teamName.indexOf(name)
+
         console.log(ele.toString(  ))
-        axios({
+        await axios({
             headers: { 'X-Auth-Token': '24cff506e20140d3aea18a56e74c7ec7' },
             url: `https://api.football-data.org/v2/teams/${this.state.teamNum[ele]}/matches`
            
         })
             .then( (response)=> {
                 this.setState({ response, url: this.state.listUrl[ele.toString()], teamName1: name   })
-            })    
-            
-            
-    }
+            })
 
+        let data = {favorite: String(ele)}
+        console.log(data)
+        await axios.put('http://localhost:5000/api/user/favorites', data, this.config).then(res => console.log(res)).catch( err => console.log(err.response))
+    }catch(err){
+        console.log(err.response)
+    }
+    }
     render() {
 
         var scheduledMatches = !this.state.response ? [] : this.state.response.data.matches.filter(ele => ele.status == "SCHEDULED")
