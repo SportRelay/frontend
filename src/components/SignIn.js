@@ -1,7 +1,9 @@
 import React from 'react'
 import {Form, Col, Button, Container} from 'react-bootstrap'
 import axios from 'axios'
-import CustomNavbar from './CustomNavbar';export default class SignIn extends React.Component {
+import CustomNavbar from './CustomNavbar';
+
+export default class SignIn extends React.Component {
 	onChangeHandler = (e) => {
         this.setState({
             [e.target.name]: e.target.value

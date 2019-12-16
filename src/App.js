@@ -24,11 +24,13 @@ import Spain from './components/SmalTables/Spain';
 import France from './components/SmalTables/France';
 import Germany from './components/SmalTables/Germany';
 import CreatePost from './components/CreatePost';
+import Post from './components/Post'
 
 class App extends Component {
   constructor(props){
     super(props);
     this.userLoggedIn = this.userLoggedIn.bind(this);
+    this.clickHandlerForPost = this.clickHandlerForPost.bind(this)
   }
   state = {
     response: null,
@@ -52,7 +54,11 @@ class App extends Component {
     this.setState({loggedIn: !this.state.loggedIn})
     console.log(this.state.loggedIn)
   }
-
+  clickHandlerForPost(post){
+    this.setState({post});
+    this.props.history.push('/Post')
+//Stopped here
+  }
 
 
   render(){
@@ -65,8 +71,7 @@ class App extends Component {
     
       <Switch>
       {/* <Route exact path="/" component ={Home} /> */}
-      <Route exact path="/" render={(props) => <Home {...props} response={this.state.response} />} />
-
+      <Route exact path="/" render={(props) => <Home {...props} clickHandlerForPost={this.clickHandlerForPost} response={this.state.response} />} />
       <Route path="/SideBar" render={(props) => <SideBar {...props} response={this.state.response} />} />
       <Route exact path="/EndMatches" render={(props) => <EndMatches {...props} response={this.state.response} />} />
       <Route exact path="/Matches" render={(props) => <Matches {...props} response={this.state.response} />} />
@@ -77,6 +82,7 @@ class App extends Component {
       {this.state.loggedIn? null :<Route path="/SignIn" render={(props) => <SignIn {...props} login={this.userLoggedIn}/>} />}
       {this.state.loggedIn? <Route path="/Favorite" component={Favorite} />: null}
       {this.state.loggedIn? <Route path="/CreatePost" component={CreatePost} />: null}
+      <Route path="/Post" render={(props) => <Post {...props} showComments={true} />} />
       <Route path="/EnglandTable" component={EnglandTable} />
       <Route path="/ItalianTable" component={ItalianTable} />
       <Route path="/SpainTable" component={SpainTable} />

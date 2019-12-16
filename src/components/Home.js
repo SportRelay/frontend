@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
-import { Card, Container, Row, Col, Table, Grid } from 'react-bootstrap'
+import { Card, Container, Row, Col, Table, Grid, Button } from 'react-bootstrap'
 import SideBar from './SideBar';
 import Post from './Post'
-
+import axios from 'axios'
 
 
 export default class Home extends Component {
+    state = {
+        posts: []
+    }
+
+    componentDidMount(){
+        axios.get('http://localhost:5000/api/post').then(res => this.setState({posts: res.data.posts})).catch(err => console.log(err))
+    }
     render() {
         return(
             
@@ -14,7 +21,7 @@ export default class Home extends Component {
                     <Col className="ml-5" md={7} sm={12} style={{background: "#EAEAEA"}}>
                     <br />
                     {/* <h1>Main</h1> */}
-                    <Post />
+                    {this.state.posts.map( post => <Card onClick={() => this.props.clickHandlerForPost(post)}><Post post={post} showComments={false}/></Card>)}
                     </Col>
                     <Col className="ml-3" md={4} sm={12} style={{background: "#EAEAEA"}}>
                     <br />

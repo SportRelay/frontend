@@ -1,6 +1,8 @@
 import React from 'react'
 import {Form, Col, Button, Container} from 'react-bootstrap'
-import axios from 'axios'export default class SignUp extends React.Component {
+import axios from 'axios'
+
+export default class SignUp extends React.Component {
 	onChangeHandler = (e) => {
         this.setState({
             [e.target.name]: e.target.value

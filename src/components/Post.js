@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import vImage from '../assets/banner.jpg'
 import { Card, CardDeck, Row} from 'react-bootstrap'
+                // {<Card.Link href="#">Like</Card.Link><Card.Link href="#">Relpy</Card.Link>}
+              // <Card.Footer>
+              //   <small className="text-muted">Last updated 3 mins ago</small>
+              // </Card.Footer>
 export default class Post extends Component {
     render() {
         return (
@@ -9,57 +13,17 @@ export default class Post extends Component {
               <Row>
             <Card className= 'card w-100'>
               <Card.Body>
-                <Card.Title>Card title</Card.Title>
+                <Card.Title>{this.props.post.title}</Card.Title>
                 <Card.Text>
-                  This is a wider card with supporting text below as a natural lead-in to
-                  additional content. This content is a little bit longer.
+                  {this.props.post.body}
                 </Card.Text>
-                <Card.Link href="#">Like</Card.Link>
-                <Card.Link href="#">Relpy</Card.Link>
               </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
             </Card>
             </Row>
             <br />
-            <Row>
-            <Card md ={12}>  
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural lead-in to
-                  additional content. This content is a little bit longer.
-                </Card.Text>
-                <Card.Link href="#">Like</Card.Link>
-                <Card.Link href="#">Relpy</Card.Link>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-            </Row>
-            <br />
-            <Row>
-            <Card md ={12}>
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural lead-in to
-                  additional content. This content is a little bit longer.
-                </Card.Text>
-                <Card.Link href="#">Like</Card.Link>
-                <Card.Link href="#">Relpy</Card.Link>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-            </Row>
-            <br />
+            {!this.props.showComments? null: this.props.post.comments.map( comment => <div><h3>{comment.username}</h3><p>{comment.comment}</p></div>)}
             </CardDeck>
 
-            
         //         <div className="detalilsform" style={{ backgroundColor: "#eff3f6" }}>
         //         <div>
                     
