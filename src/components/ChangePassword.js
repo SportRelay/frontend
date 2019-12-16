@@ -43,7 +43,7 @@ export default class ChangePassword extends Component {
         console.log(this.state.wrong)
         return (
 
-            <div className="formcontainer">
+            <div className="formcontainer pass-form-style" >
                 <SweetAlert
                     show={this.state.show}
                     title="Change Password"
@@ -59,7 +59,7 @@ export default class ChangePassword extends Component {
                         {this.state.msg}
                 </Alert>
                 ))}
-                <div className="top">Change Password</div>
+                <div className="top"><h1>Change Password</h1></div>
                 <div className="form">
                     <Form onSubmit={this.onSubmitHandelr} noValidate>
                         <table className="table col-md-6 mx-auto">
@@ -72,8 +72,8 @@ export default class ChangePassword extends Component {
                                     onChange={this.onChangeHandler} />
                             </Form.Group>
                         </table>
-                        <Button variant='secondary' type="submit" >
-                            Change Password </Button>
+                        <button className="submit-pass" type="submit" >
+                            Change Password </button>
                     </Form>
 
                 </div>

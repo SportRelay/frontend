@@ -41,3 +41,113 @@
 th {
   font-size: 14px;
 }
+td {
+  /* border: 1px solid black; */
+  width: 100px;
+  max-width: 100px;
+  white-space: pre-wrap;        /* css */
+  white-space: -moz-pre-wrap;   /* Mozilla */
+  white-space: -pre-wrap;       /* Chrome*/
+  white-space: -o-pre-wrap;     /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+/* Post form style & change pass style */
+.form-style,
+.pass-form-style {
+	font: 95% Arial, Helvetica, sans-serif;
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+	background: #F7F7F7;
+}
+.form-style h1,
+.pass-form-style h1,
+.profile-style{
+	background: #17a2b8;
+	padding: 20px 0;
+	font-size: 140%;
+	font-weight: 300;
+	text-align: center;
+	color: #fff;
+	margin: -16px -16px 16px -16px;
+}
+.form-style input,
+.form-style textarea,
+.form-style select 
+{
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+	font: 95% Arial, Helvetica, sans-serif;
+}
+.form-style input:focus,
+.form-style textarea:focus,
+.pass-form-style .form-control:focus
+{
+	box-shadow: 0 0 5px #17a2b8;
+	padding: 3%;
+	border: 1px solid #17a2b8;
+}
+
+.submit-post,
+.submit-pass,
+.submit-change {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 3%;
+	background: #17a2b8;
+	border-bottom: 2px solid #17a2b8;
+	border-top-style: none;
+	border-right-style: none;
+  border-left-style: none;
+  text-decoration: none;	
+	color: #fff;
+}
+.submit-post:hover,
+.submit-pass:hover,
+.submit-change:hover{
+	background: #0c5d69;
+}
+/* end Post form style & change pass style */
+
+/* profile */
+#intro {
+  padding: 4em 4em 2em 4em;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  text-align: center;
+}
+
+  @media screen and (max-width: 736px) {
+
+    #intro {
+      padding: 2em 2em 0.1em 2em;
+    }
+
+  }
+
+  @media screen and (max-width: 480px) {
+
+    #intro {
+      padding: 2em 1em 0.1em 1em;
+    }
+
+      #intro p br {
+        display: none;
+      }
+
+  }

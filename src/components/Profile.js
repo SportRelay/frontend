@@ -27,10 +27,10 @@ class Profile extends Component {
   render() {
     return (
       <div className="container">
-        <div className="jumbotron mt-5">
-          <div className="col-sm-8 mx-auto">
-            <h1 className="text-center">PROFILE</h1>
-          </div>
+        <div className="col-sm-8 mx-auto mt-5" style={{backgroundColor: '#17a2b8', padding: '0', color: 'white'}}>
+            
+        <div className="jumbotron" style={{borderRadius: '0'}}>
+        <h1 className="profile-style">PROFILE</h1>
           <table className="table col-md-6 mx-auto">
             <tbody>
               <tr>
@@ -48,11 +48,12 @@ class Profile extends Component {
               <tr>
                 {/* <td>Change Password</td> */}
                 {/* <td><div class="button_cont" align="center"><a class="example_a" href="/EditProfile" target="_blank" rel="nofollow noopener">Edit Profile</a></div></td> */}
-                <td><div class="button_cont" align="center"><a class="example_a" href="/ChangePassword" target="_blank" rel="nofollow noopener">Change Password</a></div></td>
+                {/* <td><div class="button_cont" align="center"><a class="example_a" href="/ChangePassword" target="_blank" rel="nofollow noopener">Change Password</a></div></td> */}
               </tr>
             </tbody>
           </table>
-          {/* <Button href="/EditProfile" variant='secondary' type="submit">Edit Profile</Button> */}
+          <button href="/ChangePassword" className='submit-change' type="submit"><a class="example_a" href="/ChangePassword" target="_blank" style={{color: 'white'}}>Change Password</a></button>
+        </div>
         </div>
         <tr> 
             {/* <div class="button_cont" align="center"><a class="example_a" href="/EditProfile" target="_blank" rel="nofollow noopener">Edit Profile</a></div> */}

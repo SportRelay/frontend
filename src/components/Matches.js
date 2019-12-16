@@ -16,7 +16,7 @@ export default class SideBar extends Component {
                 
                 
               return(  <tr>
-                    <td>{val.utcDate.replace("T", " at ").slice(0, -4)}</td>
+                    <td>{val.utcDate.replace("T", " at ").slice(13, -4)}</td>
                     <td>{val.competition.name}</td>
                     <td>{val.homeTeam.name}</td>
                     <td>{val.awayTeam.name}</td>
@@ -39,7 +39,7 @@ export default class SideBar extends Component {
                             <Table striped bordered hover variant="dark" size='sm' style= {{opacity: .99}}>
                                 <thead>
                                     <tr>
-                                        <th>DATE / Time</th>
+                                        <th>TIME</th>
                                         <th>COMPETITION</th>
                                         <th>HOME TEAM</th>
                                         <th>AWAY TEAM</th>
