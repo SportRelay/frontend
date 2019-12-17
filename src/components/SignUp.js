@@ -49,6 +49,10 @@ export default class SignUp extends React.Component {
 		      <Form.Label>Password</Form.Label>
 		      <Form.Control type="password" placeholder="Password" name="password" onChange={this.onChangeHandler}/>
 		    </Form.Group>
+		    <Form.Group controlId="formGridPassword">
+		      <Form.Label>Confirm Password</Form.Label>
+		      <Form.Control type="password" placeholder="Confirm Password" name="password" onChange={this.onChangeHandler}/>
+		    </Form.Group>
 		  </Form>		  
 		  <Form.Group id="formGridCheckbox">
 		    <Form.Check type="checkbox" label="Check me out" />

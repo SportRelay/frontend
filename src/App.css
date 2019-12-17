@@ -131,6 +131,12 @@ td {
   border-radius: 4px;
   text-align: center;
 }
+.post-box {
+  text-align: left;
+  align-items: left;
+  justify-content: left;
+}
+
 
   @media screen and (max-width: 736px) {
 

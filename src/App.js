@@ -25,6 +25,7 @@ import France from './components/SmalTables/France';
 import Germany from './components/SmalTables/Germany';
 import CreatePost from './components/CreatePost';
 import Post from './components/Post'
+import myPosts from './components/myPosts'
 
 class App extends Component {
   constructor(props){
@@ -82,6 +83,7 @@ class App extends Component {
       {this.state.loggedIn? null :<Route path="/SignIn" render={(props) => <SignIn {...props} login={this.userLoggedIn}/>} />}
       {this.state.loggedIn? <Route path="/Favorite" component={Favorite} />: null}
       {this.state.loggedIn? <Route path="/CreatePost" component={CreatePost} />: null}
+      {this.state.loggedIn? <Route path="/myPosts" component={myPosts} />: null}
       <Route path="/Post" render={(props) => <Post {...props} showComments={true} post={this.state.post} />} />
       <Route path="/EnglandTable" component={EnglandTable} />
       <Route path="/ItalianTable" component={ItalianTable} />
