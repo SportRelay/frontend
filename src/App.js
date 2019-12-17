@@ -54,9 +54,9 @@ class App extends Component {
     this.setState({loggedIn: !this.state.loggedIn})
     console.log(this.state.loggedIn)
   }
-  clickHandlerForPost(post){
+  clickHandlerForPost(post, obj){
     this.setState({post});
-    this.props.history.push('/Post')
+    obj.props.history.push('/Post')
 //Stopped here
   }
 
@@ -82,7 +82,7 @@ class App extends Component {
       {this.state.loggedIn? null :<Route path="/SignIn" render={(props) => <SignIn {...props} login={this.userLoggedIn}/>} />}
       {this.state.loggedIn? <Route path="/Favorite" component={Favorite} />: null}
       {this.state.loggedIn? <Route path="/CreatePost" component={CreatePost} />: null}
-      <Route path="/Post" render={(props) => <Post {...props} showComments={true} />} />
+      <Route path="/Post" render={(props) => <Post {...props} showComments={true} post={this.state.post} />} />
       <Route path="/EnglandTable" component={EnglandTable} />
       <Route path="/ItalianTable" component={ItalianTable} />
       <Route path="/SpainTable" component={SpainTable} />

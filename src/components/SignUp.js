@@ -44,13 +44,16 @@ export default class SignUp extends React.Component {
 		    <Form.Group controlId="formGridEmail">
 		      <Form.Label>Email</Form.Label>
 		      <Form.Control type="email" placeholder="Enter email" name="email" onChange={this.onChangeHandler}/>
-		    </Form.Group>		    <Form.Group controlId="formGridPassword">
+		    </Form.Group>		    
+		    <Form.Group controlId="formGridPassword">
 		      <Form.Label>Password</Form.Label>
 		      <Form.Control type="password" placeholder="Password" name="password" onChange={this.onChangeHandler}/>
 		    </Form.Group>
-		  </Form>		  <Form.Group id="formGridCheckbox">
+		  </Form>		  
+		  <Form.Group id="formGridCheckbox">
 		    <Form.Check type="checkbox" label="Check me out" />
-		  </Form.Group>		  <button className="submit-post" type="submit">
+		  </Form.Group>		  
+		  <button className="submit-post" type="submit">
 		    Submit
 		  </button>
 		</Form>

@@ -9,6 +9,8 @@ import { Card, CardDeck, Row} from 'react-bootstrap'
 export default class Post extends Component {
     render() {
         return (
+          <div>
+            {this.props.post === undefined? null :
             <CardDeck style={{justifyContent: 'center'}}>
               <Row>
             <Card className= 'card w-100'>
@@ -22,7 +24,8 @@ export default class Post extends Component {
             </Row>
             <br />
             {!this.props.showComments? null: this.props.post.comments.map( comment => <div><h3>{comment.username}</h3><p>{comment.comment}</p></div>)}
-            </CardDeck>
+            </CardDeck>}
+            </div>
 
         //         <div className="detalilsform" style={{ backgroundColor: "#eff3f6" }}>
         //         <div>
