@@ -34,6 +34,9 @@ export default class CustomNavbar extends Component {
                             { this.props.loggedIn ?  <Nav.Link href="/CreatePost">Create Post</Nav.Link>:
                                 null
                             }
+                            { this.props.loggedIn ?  <Nav.Link href="/myPosts">My Posts</Nav.Link>:
+                                null
+                            }
                             { this.props.loggedIn ?  <Nav.Link href="/Favorite">Favorite</Nav.Link>:
                                 null
                             }
