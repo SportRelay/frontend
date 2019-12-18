@@ -27,7 +27,7 @@ export default class ChangePassword extends Component {
             newPassword: this.state.newPassword
         }
         
-        await axios.patch(`http://localhost:5000/api/auth/reset`, data, config)
+        await axios.patch(`https://sportrelay-backend.herokuapp.com/api/auth/reset`, data, config)
             .then(res => {
                 console.log(res.data)
                 if ("Password has been reset Successfully" !== res.data.message) {

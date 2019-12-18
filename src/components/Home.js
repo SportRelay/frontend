@@ -11,7 +11,7 @@ export default class Home extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:5000/api/post').then(res => this.setState({posts: res.data.posts})).catch(err => console.log(err))
+        axios.get('https://sportrelay-backend.herokuapp.com/api/post').then(res => this.setState({posts: res.data.posts})).catch(err => console.log(err))
     }
     render() {
         return(

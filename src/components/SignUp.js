@@ -13,8 +13,9 @@ export default class SignUp extends React.Component {
         e.preventDefault();   
         if(this.state.password !== this.state.confirmpassword){
         	alert("Password does not match ebere...")
+        	return 
         }     
-        axios.post(`http://localhost:5000/api/auth/register`, {
+        axios.post(`https://sportrelay-backend.herokuapp.com/api/auth/register`, {
         	...this.state
         })
             .then(res => {

@@ -24,7 +24,7 @@ export default class CreatePost extends Component{
             }
     }
     let data = {title, body}
-    await axios.post('http://localhost:5000/api/post', data, config).then(res => this.props.history.push('/')).catch( err => console.log(err))
+    await axios.post('https://sportrelay-backend.herokuapp.com/api/post', data, config).then(res => this.props.history.push('/')).catch( err => console.log(err))
   }
 
   handleChangeField(key, event) {

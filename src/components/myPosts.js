@@ -13,18 +13,18 @@ let config = {
           "Authorization": `Bearer ${localStorage.usertoken}`
       }
 }
-export default class MyPosts extends Component {
+export default class myPosts extends Component {
     state = {
       posts: undefined
     }
     async componentDidMount(){
-      let res = await axios.get("http://localhost:5000/api/user/userposts", config);
+      let res = await axios.get("https://sportrelay-backend.herokuapp.com/api/user/userposts", config);
       this.setState({posts: res.data.posts})
     }
     async deletePostHandler(e, post){
       e.stopPropagation();
       e.preventDefault();
-      await axios.delete(`http://localhost:5000/api/post/${post._id}`, config);
+      await axios.delete(`https://sportrelay-backend.herokuapp.com/api/post/${post._id}`, config);
       let posts = this.state.posts
       posts.splice(this.state.posts.indexOf(post), 1);
       this.setState({posts: posts})

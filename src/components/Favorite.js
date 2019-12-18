@@ -33,7 +33,7 @@ export default class Favorite extends Component {
         }
     async componentDidMount(){
         try{
-        let favorite = Number((await axios.get('http://localhost:5000/api/user/favorites', this.config)).data.favorites[0])
+        let favorite = Number((await axios.get('https://sportrelay-backend.herokuapp.com/api/user/favorites', this.config)).data.favorites[0])
         await axios({
             headers: { 'X-Auth-Token': '24cff506e20140d3aea18a56e74c7ec7' },
             url: `https://api.football-data.org/v2/teams/${this.state.teamNum[favorite]}/matches`
@@ -64,7 +64,7 @@ export default class Favorite extends Component {
 
         let data = {favorite: String(ele)}
         console.log(data)
-        await axios.put('http://localhost:5000/api/user/favorites', data, this.config).then(res => console.log(res)).catch( err => console.log(err.response))
+        await axios.put('https://sportrelay-backend.herokuapp.com/api/user/favorites', data, this.config).then(res => console.log(res)).catch( err => console.log(err.response))
     }catch(err){
         console.log(err.response)
     }

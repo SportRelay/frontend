@@ -30,8 +30,8 @@ export default class Post extends Component {
                 "Authorization": `Bearer ${localStorage.usertoken}`
               }
       }
-      await axios.put(`http://localhost:5000/api/post/comment/${this.props.post._id}`, {comment: this.state.comment} ,config).then(async (res) => {
-       let postResponse = await axios.get(`http://localhost:5000/api/post/${this.props.post._id}`)
+      await axios.put(`https://sportrelay-backend.herokuapp.com/api/post/comment/${this.props.post._id}`, {comment: this.state.comment} ,config).then(async (res) => {
+       let postResponse = await axios.get(`https://sportrelay-backend.herokuapp.com/api/post/${this.props.post._id}`)
        this.props.post.comments.push(postResponse.data.post.comments[postResponse.data.post.comments.length-1])
      }).catch(err => console.log(err))
       this.setState({comment: ""})
