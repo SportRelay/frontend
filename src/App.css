@@ -104,6 +104,7 @@ td {
 .submit-post,
 .submit-pass,
 .submit-change
+, .delete-post
 /* ,.submit-comment */
  {
 	box-sizing: border-box;
@@ -123,6 +124,7 @@ td {
 .submit-pass:hover,
 .submit-change:hover
 ,.submit-comment:hover
+,.delete-post:hover
  {
 	background: #0c5d69;
 }
@@ -164,12 +166,20 @@ td {
   .post-box { 
     border: none;
   }
-  .submit-comment {
+  .submit-comment
+  , .delete-post {
     background: #17a2b8;
     color: #fff;
   } 
   .comment {
     position: absolute;
     
+  }
+  .delete-post {
+    height: 50px
+  }
+  .post-card {
+    box-shadow: black ;
+    opacity: 1.0;
   }
   

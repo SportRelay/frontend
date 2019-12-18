@@ -33,20 +33,20 @@ export default class myPosts extends Component {
         return (
           <div>
             {this.state.posts === undefined? null : this.state.posts.map( post => 
-            <CardDeck style={{justifyContent: 'center'}}>
-              <Row>
-              <Form onSubmit={(e) => this.deletePostHandler(e, post)} className="form-style" >
-            <Card className= 'card w-100'  >
+            <CardDeck className="mypost-submit" style={{justifyContent: 'center', paddingLeft: '0', marginLeft: '0'}}>
+              
+              <Form onSubmit={(e) => this.deletePostHandler(e, post)} className="form-style" style={{background: 'none', width: '500px'}} >
+            <Card className= 'card w-100' style={{marginLeft: '0'}} >
               <Card.Body className='post-box' onClick={() => this.props.clickHandlerForPost(post, this)}>
                 <Card.Title>{post.title}</Card.Title>
                 <Card.Text>
                   {post.body}
                 </Card.Text>
               </Card.Body>
-              <Button className="submit-post" type="submit">Delete</Button>
+              <button className="delete-post" type="submit">Delete</button>
             </Card>
             </Form>
-            </Row>
+            
             <br />
             </CardDeck>)}
             </div>
