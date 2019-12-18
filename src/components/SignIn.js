@@ -34,7 +34,8 @@ export default class SignIn extends React.Component {
 		    <Form.Group controlId="formGridEmail">
 		      <Form.Label>Email</Form.Label>
 		      <Form.Control type="email" placeholder="Enter email" name="email" onChange={this.onChangeHandler}/>
-		    </Form.Group>		    <Form.Group controlId="formGridPassword">
+		    </Form.Group>		    
+		    <Form.Group controlId="formGridPassword">
 		      <Form.Label>Password</Form.Label>
 		      <Form.Control type="password" placeholder="Password" name="password" onChange={this.onChangeHandler}/>
 		    </Form.Group>

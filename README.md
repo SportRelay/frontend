@@ -1,70 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Project Title
 
-## Available Scripts
+SportRelay
 
-In the project directory, you can run:
+### Description
 
-### `npm start`
+SportRelay is a web application with two main features, the first one allows the user to see football news, such as scheduled matches, results of matches and Standings Tables of the top five leagues. In addition, the user can choose his favorite team and see all related results and upcoming matches. Secondly, it allows the user to communicate with others by creating or watching posts and adding a comment to these posts.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Technologies and libraries
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
+Frontend:
+react
+jwt-decode
+axios
+react-bootstrap
+sweetalert
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Backend:
+express
+mongoose
+bcrypt/bcryptjs
+cors
+jsonwebtoken
+passport
+dovtenv
+```
 
-### `npm run build`
+### Wireframes
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Main pages
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![wireframes](./wireframe.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### User stories
 
-### `npm run eject`
+- As a user I would like to see all football matches details.
+- As a user I would like to see all football results details.
+- As a user I would like to see all posts.
+- As a user I would like to create posts.
+- As a user I would like to delete posts.
+- As a user I would like to add comment to a post.
+- As a user I would like to register and login.
+- As a user I would like to choose my favorite team and see all related details.
 
-test
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Planning and development process
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- ##### pre-project week work
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  1. Brainstormed the main features of the website.
+  2. Designed the website wireframes.
+  3. Splitting the tasks.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- ##### project week work (members work)
 
-## Learn More
+  - Mohammed
+    - Backend ( User and Post routes)
+    - Linking of the backend with the frontend
+    - Post functionalty
+    - authintaction
+  - Fahad
+    - Frontend
+    - Favorite functionalty
+    - Styling
+    - API functionalty
+  
+### Problem-solving strategy
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Console.log() and inspect from the web browser
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Future Planning
 
-### Code Splitting
+- Add admin feature the the app
+- Allow user to add favorite posts
+- Add folder feature to posts - like subreddit
+- 
+### Acknowledgment 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+We are grateful for our instructors and our classmates for their help and support.
 
-### Analyzing the Bundle Size
+### References
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ * API Source: https://www.football-data.org/
+ * React Bootstrap: https://react-bootstrap.github.io/
+ * Fahad - the best teammate eveaaaa!!

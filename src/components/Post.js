@@ -1,6 +1,3 @@
-
-
-
 import React, { Component } from 'react'
 import { Card, CardDeck, Row} from 'react-bootstrap'
 import axios from 'axios'
@@ -20,7 +17,12 @@ export default class Post extends Component {
   }
   async onSubmitHandelr(e){
       if(this.state.comment === ""){
-        alert("Stop submitting empty comment Ebere!!!")
+        alert("Stop submitting an empty comment Ebere!!!")
+        return
+      }else if(localStorage.usertoken === undefined){
+        alert("Hello!!! login dude! - (Eye roll effect - facepalm-ing) ")
+        e.target.parentNode.childNodes[0].value = ""
+        return
       }
       let config = {
             headers: {

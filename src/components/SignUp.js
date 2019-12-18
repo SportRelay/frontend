@@ -10,7 +10,10 @@ export default class SignUp extends React.Component {
     }
 	onSubmitHandelr = (e) => {
 		e.stopPropagation();
-        e.preventDefault();        
+        e.preventDefault();   
+        if(this.state.password !== this.state.confirmpassword){
+        	alert("Password does not match ebere...")
+        }     
         axios.post(`http://localhost:5000/api/auth/register`, {
         	...this.state
         })
