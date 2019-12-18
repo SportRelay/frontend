@@ -83,7 +83,7 @@ class App extends Component {
       {this.state.loggedIn? null :<Route path="/SignIn" render={(props) => <SignIn {...props} login={this.userLoggedIn}/>} />}
       {this.state.loggedIn? <Route path="/Favorite" component={Favorite} />: null}
       {this.state.loggedIn? <Route path="/CreatePost" component={CreatePost} />: null}
-      {this.state.loggedIn? <Route path="/myPosts" render={(props) => <MyPosts {...props} clickHandlerForPost={this.clickHandlerForPost} />} />: null}
+      {this.state.loggedIn? <Route path="/MyPosts" render={(props) => <MyPosts {...props} clickHandlerForPost={this.clickHandlerForPost} />} />: null}
       <Route path="/Post" render={(props) => <Post {...props} showComments={true} post={this.state.post} />} />
       <Route path="/EnglandTable" component={EnglandTable} />
       <Route path="/ItalianTable" component={ItalianTable} />

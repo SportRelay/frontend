@@ -43,12 +43,12 @@ export default class CreatePost extends Component{
           onChange={(ev) => this.handleChangeField('title', ev)}
           value={title}
           className="form-control my-3"
-          placeholder="Article Title"
+          placeholder="Title"
         />
         <textarea
           onChange={(ev) => this.handleChangeField('body', ev)}
           className="form-control my-3"
-          placeholder="Article Body"
+          placeholder="Body"
           value={body}>
         </textarea>
         <button className="submit-post" onClick={this.handleSubmit} >Submit</button>

@@ -16,9 +16,9 @@ export default class Home extends Component {
     render() {
         return(
             
-                <Row>
+                <Row style={{justifyContent: 'center'}}>
                     
-                    <Col className="ml-5" md={7} sm={12} style={{background: "#EAEAEA"}}>
+                    <Col md={7} sm={12} style={{background: "#EAEAEA"}}>
                     <br />
                     {/* <h1>Main</h1> */}
                     {this.state.posts.map( post => <Card onClick={() => this.props.clickHandlerForPost(post, this)}><Post post={post} showComments={false}/></Card>)}

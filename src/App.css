@@ -103,14 +103,16 @@ td {
 
 .submit-post,
 .submit-pass,
-.submit-change {
+.submit-change
+/* ,.submit-comment */
+ {
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	width: 100%;
 	padding: 3%;
 	background: #17a2b8;
-	border-bottom: 2px solid #17a2b8;
+	/* border-bottom: 2px solid #17a2b8; */
 	border-top-style: none;
 	border-right-style: none;
   border-left-style: none;
@@ -119,7 +121,9 @@ td {
 }
 .submit-post:hover,
 .submit-pass:hover,
-.submit-change:hover{
+.submit-change:hover
+,.submit-comment:hover
+ {
 	background: #0c5d69;
 }
 /* end Post form style & change pass style */
@@ -157,3 +161,15 @@ td {
       }
 
   }
+  .post-box { 
+    border: none;
+  }
+  .submit-comment {
+    background: #17a2b8;
+    color: #fff;
+  } 
+  .comment {
+    position: absolute;
+    
+  }
+  
