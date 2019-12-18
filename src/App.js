@@ -26,6 +26,7 @@ import Germany from './components/SmalTables/Germany';
 import CreatePost from './components/CreatePost';
 import Post from './components/Post'
 import MyPosts from './components/MyPosts'
+import NotFound from './components/NotFound'
 
 class App extends Component {
   constructor(props){
@@ -95,7 +96,8 @@ class App extends Component {
       <Route path="/Spain" component={Spain} />
       <Route path="/France" component={France} />
       <Route path="/Germany" component={Germany} />
-      <Route path="/*" render={() => <h1>Error - Page not found</h1>}/>
+      {/* <Route path="/*" render={() => <h1>Error - Page not found</h1>}/> */}
+      <Route path="/NotFound" component={NotFound} />
       </Switch>   
     </div>
     </BrowserRouter>

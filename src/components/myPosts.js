@@ -13,7 +13,7 @@ let config = {
           "Authorization": `Bearer ${localStorage.usertoken}`
       }
 }
-export default class myPosts extends Component {
+export default class MyPosts extends Component {
     state = {
       posts: undefined
     }
