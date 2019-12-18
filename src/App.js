@@ -97,7 +97,7 @@ class App extends Component {
       <Route path="/France" component={France} />
       <Route path="/Germany" component={Germany} />
       {/* <Route path="/*" render={() => <h1>Error - Page not found</h1>}/> */}
-      <Route path="/NotFound" component={NotFound} />
+      <Route path="/*" component={NotFound} />
       </Switch>   
     </div>
     </BrowserRouter>
